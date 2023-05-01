@@ -1,8 +1,7 @@
 import React from "react";
-import Header from "../pages/Shared/Header/Header";
-import LeftNav from "../pages/Shared/LeftNav/LeftNav";
-import RightNav from "../pages/Shared/RightNav/RightNav";
 import bg from "../assets/Rectangle 1.png";
+import Header from "../components/Shared/Header/Header";
+import { Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -13,12 +12,12 @@ const Main = () => {
       </div>
 
       <div className="absolute top-0 left-0 w-full">
-        <Header></Header>
+       <Header></Header>
         <div className="grid lg:grid-cols-2">
-          <LeftNav></LeftNav>
-          <RightNav></RightNav>
+     <Outlet></Outlet>
         </div>
       </div>
+    
     </div>
   );
 };
