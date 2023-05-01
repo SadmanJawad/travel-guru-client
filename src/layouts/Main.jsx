@@ -1,27 +1,24 @@
 import React from "react";
 import Header from "../pages/Shared/Header/Header";
-import Footer from "../pages/Shared/Footer/Footer";
 import LeftNav from "../pages/Shared/LeftNav/LeftNav";
 import RightNav from "../pages/Shared/RightNav/RightNav";
-import backgroundImage from "../../public/Rectangle 1.png"
-import { Col, Container, Row } from "react-bootstrap";
+import bg from "../assets/Rectangle 1.png";
 
 const Main = () => {
   return (
-    <div>
-      <Header></Header>
-      <Container>
-      <Row>
-        <Col lg={4}>
+    <div className="relative">
+      <div className="relative w-full h-full">
+        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <img src={bg} alt="" className="h-auto" />
+      </div>
+
+      <div className="absolute top-0 left-0 w-full">
+        <Header></Header>
+        <div className="grid lg:grid-cols-2">
           <LeftNav></LeftNav>
-        </Col>
-        <Col lg={8} >
-      <RightNav></RightNav>
-        </Col>
-      </Row>
-    </Container>
-      <Footer></Footer>
-     
+          <RightNav></RightNav>
+        </div>
+      </div>
     </div>
   );
 };
